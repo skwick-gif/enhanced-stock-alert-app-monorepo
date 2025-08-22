@@ -1,0 +1,14 @@
+{
+  "name": "enhanced-stock-alert-app-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.1"
+  },
+  "packageManager": "npm@10.9.3"
+}
