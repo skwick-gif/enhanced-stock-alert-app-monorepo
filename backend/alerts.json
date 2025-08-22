@@ -1,0 +1,12 @@
+[
+  {
+    "id": "69af509f-a2a6-4acb-b589-882e0c751b1d",
+    "asset_id": "GOOGL",
+    "asset_symbol": "SYMBOL_GOOGL",
+    "type": "price_below",
+    "target_value": 2800.0,
+    "is_active": true,
+    "created_at": "2025-08-22T05:35:39.115593",
+    "triggered_at": null
+  }
+]

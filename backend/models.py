@@ -34,6 +34,13 @@ class CreateAlertRequest(BaseModel):
     target_value: float
 
 
+class UpdateAlertRequest(BaseModel):
+    asset_id: Optional[str] = None
+    type: Optional[str] = None  # AlertType
+    target_value: Optional[float] = None
+    is_active: Optional[bool] = None
+
+
 class AlertResponse(BaseModel):
     alerts: List[Alert]
     total: int
