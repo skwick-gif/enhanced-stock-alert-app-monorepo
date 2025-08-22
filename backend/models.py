@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import List, Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class Asset(BaseModel):
@@ -19,19 +19,30 @@ class AlertType(str):
 
 class Alert(BaseModel):
     id: str
-    asset_id: str
-    asset_symbol: str
+    assetId: str
+    assetSymbol: str
     type: str  # AlertType
-    target_value: float
-    is_active: bool
-    created_at: str
-    triggered_at: Optional[str] = None
+    targetValue: float
+    isActive: bool
+    createdAt: str
+    triggeredAt: Optional[str] = None
+
+    class Config:
+        # Accept both camelCase and snake_case for input
+        populate_by_name = True
 
 
 class CreateAlertRequest(BaseModel):
-    asset_id: str
+    assetId: str
     type: str  # AlertType
-    target_value: float
+    targetValue: float
+
+
+class UpdateAlertRequest(BaseModel):
+    assetId: Optional[str] = None
+    type: Optional[str] = None  # AlertType
+    targetValue: Optional[float] = None
+    isActive: Optional[bool] = None
 
 
 class AlertResponse(BaseModel):

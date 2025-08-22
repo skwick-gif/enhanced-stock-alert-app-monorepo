@@ -13,7 +13,9 @@ This monorepo contains:
 
 ### Backend (FastAPI)
 - ✅ Health check endpoint (`/health`)
-- ✅ Alert management (`GET/POST /alerts`)
+- ✅ Alert management (`GET/POST/PUT/DELETE /alerts`)
+- ✅ Individual alert retrieval (`GET /alerts/{id}`)
+- ✅ File-based persistence (`alerts.json`)
 - ✅ Scoring system (`GET /score`)
 - ✅ Pydantic models for data validation
 - ✅ CORS enabled for frontend integration
@@ -22,6 +24,9 @@ This monorepo contains:
 ### Frontend (Next.js 14)
 - ✅ Dashboard with overview statistics
 - ✅ Alert Center for managing alerts
+- ✅ Full CRUD operations for alerts (Create, Read, Update, Delete)
+- ✅ Edit alert functionality with form validation
+- ✅ Delete confirmation modal
 - ✅ Responsive UI with Tailwind CSS
 - ✅ TypeScript integration
 - ✅ Reusable AlertList component
@@ -76,7 +81,44 @@ docker run -p 3000:3000 stock-alert-frontend
 - `GET /health` - Health check
 - `GET /alerts` - List all alerts
 - `POST /alerts` - Create new alert
+- `GET /alerts/{id}` - Get specific alert by ID
+- `PUT /alerts/{id}` - Update existing alert
+- `DELETE /alerts/{id}` - Delete alert by ID
 - `GET /score` - Get asset scores
+
+### Alert Endpoints Details
+
+#### Create Alert
+```bash
+POST /alerts
+Content-Type: application/json
+
+{
+  "assetId": "AAPL",
+  "type": "price_above|price_below|percentage_change",
+  "targetValue": 150.0
+}
+```
+
+#### Update Alert
+```bash
+PUT /alerts/{id}
+Content-Type: application/json
+
+{
+  "assetId": "AAPL",          // optional
+  "type": "price_above",      // optional  
+  "targetValue": 160.0,       // optional
+  "isActive": false           // optional
+}
+```
+
+#### Delete Alert
+```bash
+DELETE /alerts/{id}
+```
+
+All alert operations support file-based persistence using `alerts.json`.
 
 ## Screenshots
 
@@ -91,15 +133,18 @@ docker run -p 3000:3000 stock-alert-frontend
 
 ## Development
 
-This is a stub implementation focusing on:
-- API connectivity and data flow
-- Basic CRUD operations for alerts
-- UI components and navigation
-- Type safety across the stack
+This implementation includes:
+- ✅ Complete CRUD operations for alerts
+- ✅ File-based persistence using `alerts.json`
+- ✅ API connectivity and data flow
+- ✅ UI components and navigation
+- ✅ Type safety across the stack
+- ✅ Form validation and error handling
+- ✅ Delete confirmation modals
 
 Future enhancements will include:
 - Real-time stock data integration
-- Persistent data storage
 - User authentication
 - Real-time notifications
 - Advanced scoring algorithms
+- Database integration (PostgreSQL/MongoDB)
