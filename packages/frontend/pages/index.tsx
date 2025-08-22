@@ -126,6 +126,9 @@ export default function Home() {
           ))}
         </ul>
       </div>
+      <footer className="mt-8 text-center text-gray-500">
+        <p>Disclaimer: This app provides information for educational purposes only and is not financial advice. Consult a professional advisor before trading.</p>
+      </footer>
     </div>
   );
 }

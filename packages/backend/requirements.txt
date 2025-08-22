@@ -6,3 +6,7 @@ python-dateutil==2.8.2
 python-dotenv==1.0.1
 scikit-learn==1.5.1
 websockets==10.4
+urllib3==2.5.0
+numpy==2.0.0
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.31

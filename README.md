@@ -14,16 +14,18 @@ A personalized, real-time scanning and alerting tool for stocks and options, bui
 - AI enhancements: natural language queries, adaptive filters, explainable alerts.
 - Tracking and learning: alert history, performance insights, and AI-driven parameter suggestions.
 - Dashboard with visualizations (e.g., heatmaps, bubble charts) and watchlist management.
+- Notifications for upcoming reports (e.g., earnings).
+- Tracking of news/social media for Fed speeches with AI market movement predictions.
 
 ## Getting Started
 ### Prerequisites
-- Node.js (v18+), Python (3.9+), and Docker installed.
+- Node.js (v18+), Python (3.10+), and PostgreSQL (v16+) installed.
 - API keys for:
   - Polygon.io (real-time stocks/options data)
   - Alpha Vantage (fundamentals/technicals)
   - Finnhub (sentiment analysis)
   - OpenAI (NLP for natural language queries)
-- Store API keys in `.env` files in `packages/backend` and `packages/frontend`.
+- Store API keys in `.env` files in `packages/backend`.
 
 ### Setup
 1. Clone the repo:
