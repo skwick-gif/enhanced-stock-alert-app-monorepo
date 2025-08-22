@@ -3,9 +3,11 @@ import { Alert } from '@/shared/types'
 interface AlertListProps {
   alerts: Alert[]
   loading: boolean
+  onEdit?: (alert: Alert) => void
+  onDelete?: (alertId: string) => void
 }
 
-export default function AlertList({ alerts, loading }: AlertListProps) {
+export default function AlertList({ alerts, loading, onEdit, onDelete }: AlertListProps) {
   if (loading) {
     return (
       <div className="bg-white rounded-lg shadow-md p-6">
@@ -122,10 +124,16 @@ export default function AlertList({ alerts, loading }: AlertListProps) {
                 </div>
               </div>
               <div className="flex space-x-2">
-                <button className="text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium">
+                <button 
+                  onClick={() => onEdit?.(alert)}
+                  className="text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium"
+                >
                   Edit
                 </button>
-                <button className="text-red-600 hover:text-red-800 transition-colors text-sm font-medium">
+                <button 
+                  onClick={() => onDelete?.(alert.id)}
+                  className="text-red-600 hover:text-red-800 transition-colors text-sm font-medium"
+                >
                   Delete
                 </button>
               </div>

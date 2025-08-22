@@ -1,12 +1,22 @@
 [
   {
-    "id": "69af509f-a2a6-4acb-b589-882e0c751b1d",
-    "asset_id": "GOOGL",
-    "asset_symbol": "SYMBOL_GOOGL",
+    "id": "6f90f33c-ff00-4a00-aa38-91db07d7d686",
+    "assetId": "AAPL",
+    "assetSymbol": "SYMBOL_AAPL",
+    "type": "price_above",
+    "targetValue": 175.0,
+    "isActive": true,
+    "createdAt": "2025-08-22T05:42:11.585022",
+    "triggeredAt": null
+  },
+  {
+    "id": "abdb405b-230c-467b-90aa-a8d1ad36d6e8",
+    "assetId": "GOOGL",
+    "assetSymbol": "SYMBOL_GOOGL",
     "type": "price_below",
-    "target_value": 2800.0,
-    "is_active": true,
-    "created_at": "2025-08-22T05:35:39.115593",
-    "triggered_at": null
+    "targetValue": 2500.0,
+    "isActive": true,
+    "createdAt": "2025-08-22T05:43:49.657629",
+    "triggeredAt": null
   }
 ]

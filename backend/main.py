@@ -73,12 +73,12 @@ async def create_alert(alert_request: CreateAlertRequest):
     # Create new alert
     new_alert = Alert(
         id=str(uuid.uuid4()),
-        asset_id=alert_request.asset_id,
-        asset_symbol=f"SYMBOL_{alert_request.asset_id}",  # Stub asset symbol
+        assetId=alert_request.assetId,
+        assetSymbol=f"SYMBOL_{alert_request.assetId}",  # Stub asset symbol
         type=alert_request.type,
-        target_value=alert_request.target_value,
-        is_active=True,
-        created_at=datetime.now().isoformat()
+        targetValue=alert_request.targetValue,
+        isActive=True,
+        createdAt=datetime.now().isoformat()
     )
     
     add_alert(new_alert)
@@ -109,15 +109,15 @@ async def update_alert_endpoint(alert_id: str, alert_request: UpdateAlertRequest
     
     # Update only provided fields
     updated_alert = existing_alert.copy()
-    if alert_request.asset_id is not None:
-        updated_alert.asset_id = alert_request.asset_id
-        updated_alert.asset_symbol = f"SYMBOL_{alert_request.asset_id}"  # Update symbol too
+    if alert_request.assetId is not None:
+        updated_alert.assetId = alert_request.assetId
+        updated_alert.assetSymbol = f"SYMBOL_{alert_request.assetId}"  # Update symbol too
     if alert_request.type is not None:
         updated_alert.type = alert_request.type
-    if alert_request.target_value is not None:
-        updated_alert.target_value = alert_request.target_value
-    if alert_request.is_active is not None:
-        updated_alert.is_active = alert_request.is_active
+    if alert_request.targetValue is not None:
+        updated_alert.targetValue = alert_request.targetValue
+    if alert_request.isActive is not None:
+        updated_alert.isActive = alert_request.isActive
     
     success = update_alert(alert_id, updated_alert)
     if not success:

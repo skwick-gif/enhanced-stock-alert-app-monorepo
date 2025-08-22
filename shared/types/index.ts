@@ -36,6 +36,13 @@ export interface CreateAlertRequest {
   targetValue: number;
 }
 
+export interface UpdateAlertRequest {
+  assetId?: string;
+  type?: Alert['type'];
+  targetValue?: number;
+  isActive?: boolean;
+}
+
 export interface AlertResponse {
   alerts: Alert[];
   total: number;
