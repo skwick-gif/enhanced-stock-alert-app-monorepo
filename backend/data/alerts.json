@@ -1,0 +1,12 @@
+[
+  {
+    "id": "f0a5d7d1-8506-4101-9ac8-b6868b0a1c07",
+    "asset_id": "AAPL",
+    "asset_symbol": "AAPL",
+    "type": "price_above",
+    "target_value": 155,
+    "is_active": false,
+    "created_at": "2025-08-25T12:48:00.254Z",
+    "triggered_at": null
+  }
+]
